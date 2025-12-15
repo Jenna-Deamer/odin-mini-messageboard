@@ -1,0 +1,30 @@
+h1{
+    text-align: center;
+}
+main{
+    max-width: 2000px;
+    margin: 0 2em;
+}
+.message-container {
+    background-color: rgba(108, 122, 137, .4);
+    border-radius: 8px;
+    padding: .5em 1em;
+    margin-bottom: 1em;
+    max-width: 400px;
+
+}
+
+.message-user{
+   margin: .5em 0;
+}
+.message-body{
+    margin: 0;
+}
+.message-timestamp{
+    margin-top: .5em;
+    margin-bottom: 0;
+    font-size: .8em;
+    font-style: italic;
+    display: flex;
+    justify-content: end;
+}

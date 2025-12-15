@@ -1,9 +1,21 @@
+<!DOCTYPE html>
 <html>
- <head>
+<head>
   <link rel="stylesheet" href="/styles.css">
-    <title>Homepage</title>
-  </head>
-  <body>
-<h1>Index</h1>
-  </body>
+  <title><%= title %></title>
+</head>
+
+<body>
+  <h1>Messages</h1>
+
+  <main>
+  <% messages.forEach((message) => { %>
+    <div class="message-container">
+      <p class="message-user"><strong><%= message.user %></strong></p>
+      <p class="message-body"><%= message.text %></p>
+      <p class="message-timestamp"><%= message.added.toDateString() %></p>
+    </div>
+  <% }) %>
+</main>
+</body>
 </html>
