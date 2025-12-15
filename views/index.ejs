@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <link rel="stylesheet" href="/styles.css">
   <title><%= title %></title>
@@ -9,11 +9,15 @@
   <h1>Messages</h1>
 
   <main>
-  <% messages.forEach((message) => { %>
+  <% messages.forEach((message, index) => { %>
     <div class="message-container">
       <p class="message-user"><strong><%= message.user %></strong></p>
       <p class="message-body"><%= message.text %></p>
+      <div class="message-footer">
       <p class="message-timestamp"><%= message.added.toDateString() %></p>
+      <a  href="/messageDetails/<%= index %>">Open</a>
+      </div>
+    
     </div>
   <% }) %>
 
