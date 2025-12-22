@@ -1,14 +1,18 @@
-<form method="POST" action="/new">
-    <h2>New Message</h2>
-    <fieldset>
-        <label for="author">Author:</label>
-        <input type="text" id="author" name="author" required minlength="2" placeholder="enter author">
+<section>
+    <%- include("partials/errors.ejs") %>
+        <form method="POST" action="/new">
+            <h2>New Message</h2>
+            <fieldset>
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author" required placeholder="enter author">
 
-    </fieldset>
-    <fieldset>
-        <label for="message">Message:</label>
-        <input type="text" id="message" name="message" required minlength="1" placeholder="enter message">
-    </fieldset>
+            </fieldset>
+            <fieldset>
+                <label for="message">Message:</label>
+                <input type="text" id="message" name="message" required placeholder="enter message">
+            </fieldset>
 
-    <button type="submit">Send</button>
-</form>
+            <button type="submit">Send</button>
+        </form>
+
+</section>

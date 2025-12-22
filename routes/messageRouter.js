@@ -4,6 +4,6 @@ const messageRouter = Router();
 
 messageRouter.get('/', messageController.getMessages);
 messageRouter.get('/new', messageController.showNewMessageForm)
-messageRouter.post('/new', messageController.postMessage);
+messageRouter.post('/new', messageController.validateMessage, messageController.postMessage);
 
 module.exports = messageRouter;
