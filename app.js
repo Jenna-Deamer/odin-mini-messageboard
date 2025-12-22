@@ -15,9 +15,6 @@ const indexRouter = require("./routes/indexRouter");
 const messageRouter = require("./routes/messageRouter");
 
 app.use("/", messageRouter);
-app.use("/new", messageRouter);
-
-
 
 app.listen(PORT, () => {
     console.log(`Express app listening on ${PORT}`);

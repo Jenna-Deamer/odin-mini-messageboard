@@ -8,6 +8,19 @@ async function getMessages(req, res) {
     })
 }
 
+async function showNewMessageForm(req, res) {
+    res.render('form');
+}
+
+async function postMessage(req, res) {
+    const { author, message } = req.body;
+    await db.insertMessage(author, message);
+    res.redirect('/');
+}
+
+
 module.exports = {
-    getMessages
+    getMessages,
+    postMessage,
+    showNewMessageForm
 }
