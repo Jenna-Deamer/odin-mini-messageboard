@@ -5,12 +5,13 @@ const SQL = `
 CREATE TABLE IF NOT EXISTS messages (
   id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
   message VARCHAR ( 255 ),
-  author VARCHAR (50)
+  author VARCHAR (50),
+   timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 INSERT INTO messages (author, message) 
 VALUES
-  ('Jen', Hello this is a message'),
+  ('Jen', 'Hello this is a message'),
   ('Bob','Another message'),
   ('Jen','Woohoo');
 `;
@@ -18,7 +19,7 @@ VALUES
 async function main() {
     console.log("seeding...");
     const client = new Client({
-        connectionString: DATABASE_URL
+        connectionString: process.env.DATABASE_URL
     });
     await client.connect();
     await client.query(SQL);
