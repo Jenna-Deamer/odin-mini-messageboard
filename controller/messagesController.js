@@ -13,7 +13,7 @@ async function showNewMessageForm(req, res) {
 }
 
 async function postMessage(req, res) {
-    const { author, message } = req.body;
+    const { author, message } = req.query;
     await db.insertMessage(author, message);
     res.redirect('/');
 }
